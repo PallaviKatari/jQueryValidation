@@ -23,6 +23,16 @@
             color: red;
             margin-left: 5px;
         }
+
+        textarea {
+            background: url(images/benice.png) center center no-repeat;
+            /* This ruins default border */
+            border: 1px solid #888;
+        }
+
+        .drop{
+
+        }
     </style>
 </head>
 
@@ -30,6 +40,7 @@
     <h1 style="color:green;">
         CG VAK
     </h1>
+    <hr>
     <input id="input" type="text" name="input" />
     <button onclick="disable()">
         Disable
@@ -40,6 +51,12 @@
     </button>
     <br>
     <hr>
+    <textarea></textarea>
+    <select class="drop">
+        <option>one</option>
+        <option>one</option>
+        <option>one</option>
+    </select>
     <!-- Script to disable input text area -->
     <script>
         function disable() {
@@ -48,6 +65,11 @@
         function enable() {
             $("input").prop('disabled', false);
         }
+        // $('textarea')
+        //     .focus(function () { $(this).css("background", "none") })
+        //     .blur(function () { if ($(this)[0].value == '') { $(this).css("background", "url(burger.png) center center no-repeat") } });
+        $('.drop')
+            .click(function () { $('textarea').css("background", "url(burger.png) center center no-repeat") })
     </script>
 </body>
 
