@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JQuery Validate Demo</title>
+    <!-- SRC attribute can be changed according to your preference or location of JS file -->
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <style type="text/css">
+        /* Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        label {
+            padding: 11px 12px 11px 2px;
+            display: inline-block;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        textarea {
+            border: 2px solid #ccc;
+            resize: vertical;
+            padding: 12px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        form {
+            padding: 20px;
+            background: #bbd2e9;
+            color: #050505;
+            border-radius: 4px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+            background-color: #adefb0;
+            color:rgb(0, 0, 0);
+            padding: 12px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .row {
+            margin-top: 0;
+            width: 100%;
+        }
+
+        form .error {
+            color: #ff0001;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" id="MyForm" method="get" action="" name="MyForm">
+            <fieldset>
+                <legend>Registration Form</legend>
+                <div class="row">
+                    <label for="FName">First Name</label>
+                    <input id="FName" name="FName" type="text" minlength="2">
+                </div>
+                <div class="row">
+                    <label for="LName">Last Name</label>
+                    <input id="LName" name="LName" type="text">
+                </div>
+                <div class="row">
+                    <label for="Email">E-Mail</label>
+                    <input id="Email" type="email" name="Email">
+                </div>
+                <div class="row">
+                    <label for="Pwd">Password</label>
+                    <input type="password" name="Pwd" id="Pwd">
+                </div>
+                <div class="row">
+                    <label for="Cmt">Your comment</label>
+                    <textarea id="Cmt" name="Cmt"></textarea>
+                </div>
+                <div class="row">
+                    <input class="registerbtn" type="submit" value="Register">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#MyForm").validate({
+                rules: {
+                    'FName': {
+                        required: true,
+                        minlength: 2
+                    },
+                    'LName': {
+                        required: true,
+                        minlength: 2
+                    },
+                    'Email': {
+                        required: true,
+                        email: true,
+                    },
+                    'Pwd': {
+                        required: true,
+                    },
+                },
+                messages: {
+                    'FName': "Please enter a valid First Name.",
+                    'LName': "Please enter a valid Last Name.",
+                    'Email': "Please enter Email in proper format.",
+                    'Pwd': "Please enter a Password",
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

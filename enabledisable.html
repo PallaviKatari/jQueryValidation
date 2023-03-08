@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        JavaScript enable/disable
+        an input element
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <style>
+        form label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body style="text-align:center;">
+    <h1 style="color:green;">
+        CG VAK
+    </h1>
+    <input id="input" type="text" name="input" />
+    <button onclick="disable()">
+        Disable
+    </button>
+    <br>
+    <button onclick="enable()">
+        Enable
+    </button>
+    <br>
+    <hr>
+    <!-- Script to disable input text area -->
+    <script>
+        function disable() {
+            $("input").prop('disabled', true);
+        }
+        function enable() {
+            $("input").prop('disabled', false);
+        }
+    </script>
+</body>
+
+</html>
